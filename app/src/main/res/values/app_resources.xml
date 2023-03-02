@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="nav_menu_home">Home</string>
+    <string name="nav_menu_favorites">Favorites</string>
+
+    <string name="nav_header_background">Nav Header Background</string>
+    <string name="placeholder_image">Placeholder Image</string>
+    <string name="delete_icon">Delete Icon</string>
+    <string name="favorite_icon">Favorite Icon</string>
+
+    <string name="top_cities">Top Cities</string>
+    <string name="favorites">Favorites</string>
+
+</resources>
