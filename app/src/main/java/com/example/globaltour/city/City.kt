@@ -30,7 +30,8 @@ object VacationSpots {
 //        R.drawable.thumb_3_1, R.drawable.thumb_3_2, R.drawable.thumb_3_3,
 //        R.drawable.thumb_3_4, R.drawable.thumb_3_5, R.drawable.thumb_3_6,
  //       R.drawable.thumb_3_7, R.drawable.thumb_3_8, R.drawable.thumb_3_9,
-        R.drawable.thumb_7_3, R.drawable.thumb_7_4, R.drawable.thumb_7_5,R.drawable.thumb_7_6,
+  //      R.drawable.thumb_7_3, R.drawable.thumb_7_4,
+        R.drawable.thumb_7_5,R.drawable.thumb_7_6,
         R.drawable.thumn_7_7, R.drawable.thumb_7_8,R.drawable.thumb_7_9
     )
 
@@ -47,7 +48,8 @@ object VacationSpots {
 //        "York", "Stratford-upon-Avon", "Bournemouth", "Beijing",
 //        "Miami", "Portland", "Chengdu", "Hangzhou", "Suzhou", "Huangshan",
 //        "Hong Kong", "Cairns", "Perth", "Brisbane",
-      "Kakadu", "Melbourne", "Great Barrier Reef", "Sydney","Lwanda", "California",
+      "Kakadu", "Melbourne", "Great Barrier Reef", "Sydney",
+        "Lwanda", "California",
         "Japan","S.Korea", "Isreal","Nigeria"
     )
 
