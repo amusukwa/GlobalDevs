@@ -50,7 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Text button"
+        android:text="@string/ask"
+        app:icon="@drawable/ic_baseline_send_24"
         app:layout_constraintEnd_toEndOf="@+id/textField2"
         app:layout_constraintStart_toStartOf="@+id/textField2"
         app:layout_constraintTop_toBottomOf="@+id/textField2" />
