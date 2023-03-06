@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "950270208607",
+    "project_id": "globaldevs-d2f50",
+    "storage_bucket": "globaldevs-d2f50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950270208607:android:60f50b7e889e4d046949ea",
+        "android_client_info": {
+          "package_name": "com.example.globaltour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950270208607-310sh8c472k6pl3gunn0p0p4lhtg02c6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWFdDDf6l7Lj8bjo470p_n-mQEDACbcpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950270208607-310sh8c472k6pl3gunn0p0p4lhtg02c6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
