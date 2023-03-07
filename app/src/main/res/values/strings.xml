@@ -4,4 +4,5 @@
     <string name="questions">questions</string>
     <string name="label">label</string>
     <string name="ask">Ask</string>
+    <string name="send">send</string>
 </resources>
