@@ -1,5 +1,5 @@
 package com.example.globaltour.qestions
 
-data class Question(val city: String ="" , val country: String =""){
+data class Question(val questionName: String ="" , val username: String =""){
 
 }
