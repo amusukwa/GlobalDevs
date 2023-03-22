@@ -6,43 +6,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".qestions.QuestionsFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/question_text"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/question_text"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="45dp"-->
+<!--        android:hint="@string/label"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:startIconContentDescription="@string/questions"-->
+<!--        app:startIconDrawable="@drawable/ic_favorite_filled"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/username_text"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:hint="@string/label"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/question_text"-->
+<!--        app:startIconContentDescription="@string/questions"-->
+<!--        app:startIconDrawable="@drawable/ic_favorite_filled"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/questionButton"-->
+<!--        style="@style/Widget.MaterialComponents.Button.Icon"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:text="@string/send"-->
+<!--        app:icon="@drawable/ic_baseline_send_24"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+    <EditText
+        android:id="@+id/questionName"
+        android:layout_width="249dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:gravity="start|top"
         android:hint="@string/label"
+        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:startIconContentDescription="@string/questions"
-        app:startIconDrawable="@drawable/ic_favorite_filled"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/username_text"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="start|top"
         android:hint="@string/label"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question_text"
-        app:startIconContentDescription="@string/questions"
-        app:startIconDrawable="@drawable/ic_favorite_filled"
-        tools:ignore="MissingConstraints">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/questionName" />
 
 
     <Button
@@ -50,16 +91,12 @@
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/send"
+        android:layout_marginTop="16dp"
+        android:text="Button"
         app:icon="@drawable/ic_baseline_send_24"
-        app:layout_constraintEnd_toEndOf="@+id/username_text"
-        app:layout_constraintStart_toStartOf="@+id/username_text"
-        app:layout_constraintTop_toBottomOf="@+id/username_text"
-        tools:ignore="MissingConstraints" />
-
-
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,16 +18,9 @@ class QuestionAdapter(val context: Context, var QuestionList: ArrayList<Question
 //        private var currentPosition: Int = -1
        private lateinit var question: Question
 
-        private val questiontxt = itemView.findViewById<TextView>(R.id.question_text)
+        private val questiontxt = itemView.findViewById<TextView>(R.id.questionName)
         private val usernametxt= itemView.findViewById<TextView>(R.id.username_text)
-
-        fun setData(city: City, position: Int) {
-
-            questiontxt.text = question.questionName
-            usernametxt.text = question.username
-
-
-        }
+        
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestionViewHolder {

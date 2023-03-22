@@ -11,15 +11,9 @@ import com.example.globaltour.R
 import com.google.firebase.database.FirebaseDatabase
 
 
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [QuestionsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
+
 class QuestionsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,18 +26,21 @@ class QuestionsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val addButton = view.findViewById<Button>(R.id.questionButton)
+
         addButton.setOnClickListener {
             val docRef = FirebaseDatabase.getInstance()
 
-//            val cityName = view.findViewById<EditText>(R.id.city_name)
-//            val countryName = view.findViewById<EditText>(R.id.country)
-//
-//            val name = cityName.text.toString()
-//            val country = countryName!!.text.toString()
-//
-//
-//            val globalCity = GlobalCity(name,country)
-//            docRef.getReference("cities").child("globacities").push().setValue(globalCity)
+            val questiontext = view.findViewById<EditText>(R.id.questionName)
+
+            val name = view.findViewById<EditText>(R.id.username_text)
+
+            val questionName = questiontext.text.toString()
+            val username = name!!.text.toString()
+
+
+            val question = Question(questionName,username)
+            docRef.getReference("questions").child("questions").push()
+                .setValue(question)
 
         }
 
