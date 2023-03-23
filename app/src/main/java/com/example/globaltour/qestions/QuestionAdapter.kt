@@ -20,7 +20,7 @@ class QuestionAdapter(val context: Context, var QuestionList: ArrayList<Question
 
         private val questiontxt = itemView.findViewById<TextView>(R.id.questionName)
         private val usernametxt= itemView.findViewById<TextView>(R.id.username_text)
-        
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestionViewHolder {

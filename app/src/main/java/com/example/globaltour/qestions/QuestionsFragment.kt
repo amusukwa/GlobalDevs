@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.globaltour.R
 import com.google.firebase.database.FirebaseDatabase
 
@@ -39,8 +40,10 @@ class QuestionsFragment : Fragment() {
 
 
             val question = Question(questionName,username)
-            docRef.getReference("questions").child("questions").push()
+            docRef.getReference("questions").push()
                 .setValue(question)
+
+            Toast.makeText(this@QuestionsFragment.requireActivity(),"saving",Toast.LENGTH_SHORT).show()
 
         }
 

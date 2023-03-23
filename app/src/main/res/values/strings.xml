@@ -5,4 +5,5 @@
     <string name="label">label</string>
     <string name="ask">Ask</string>
     <string name="send">send</string>
+    <string name="List">List</string>
 </resources>

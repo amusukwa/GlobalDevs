@@ -22,5 +22,11 @@
         android:name="com.example.globaltour.qestions.QuestionsFragment"
         android:label="@string/questions"
         tools:layout="@layout/fragment_questions" />
+    <fragment
+        android:id="@+id/fragmentQuestionsList"
+        android:name="com.example.globaltour.qestions.QuestionsList"
+        android:label="List"
+        tools:layout="@layout/fragment_questions" />
+
 
 </navigation>
