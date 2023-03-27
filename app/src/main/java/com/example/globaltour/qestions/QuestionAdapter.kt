@@ -16,7 +16,6 @@ class QuestionAdapter(val context: Context, var QuestionList: ArrayList<Question
 
     inner class QuestionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-//        private var currentPosition: Int = -1
        private lateinit var question: Question
 
         private val questiontxt = itemView.findViewById<TextView>(R.id.questionName_txt)
@@ -27,11 +26,9 @@ class QuestionAdapter(val context: Context, var QuestionList: ArrayList<Question
             questiontxt.text = question.questionName
             usernametxt.text = question.username
 
-
         }
 
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestionViewHolder {
         val itemView =
