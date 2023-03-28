@@ -1,6 +1,8 @@
 package com.example.globaltour.qestions
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.graphics.Insets.add
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -45,18 +47,20 @@ class QuestionsList : Fragment() {
          recyclerView?.adapter = questionAdapter
 
 
-        docRef.getReference("questions").child("questions").
+        docRef.getReference("questions").
         addValueEventListener(object: ValueEventListener {
+            @SuppressLint("SuspiciousIndentation")
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
                     for(questionSnapshot in snapshot.children){
 
                     }
-//                    val globalcity = snapshot.getValue(GlobalCity::class.java)
-//                        Log.d(ContentValues.TAG,"error getting document   ${globalcity}")
-//                        globalcitiesList.add(globalcity!!)
+                    val question = snapshot.getValue(Question::class.java)
+                        Log.d(ContentValues.TAG,"error getting document   ${question}")
+                 //       QuestionsList.add(question!!)
+
                     }
-    //                recyclerView?.adapter = NewCityAdapter(context,globalcitiesList)
+                   // recyclerView?.adapter = questionAdapter(context,questionList)
                 }
 
             override fun onCancelled(error: DatabaseError) {
