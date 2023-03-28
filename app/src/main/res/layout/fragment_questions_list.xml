@@ -8,6 +8,7 @@
     tools:context=".qestions.QuestionsList">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/questions_recycler"
         android:layout_width="409dp"
         android:layout_height="729dp"
         app:layout_constraintEnd_toEndOf="parent"
