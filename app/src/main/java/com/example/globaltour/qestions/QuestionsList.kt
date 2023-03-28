@@ -45,25 +45,28 @@ class QuestionsList : Fragment() {
          recyclerView?.adapter = questionAdapter
 
 
-//        docRef.getReference("cities").child("globacities").
-//        addValueEventListener(object: ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                if(snapshot.exists()){
-//                    for(mentorSnapshot in snapshot.children){
-//                        val globalcity = snapshot.getValue(GlobalCity::class.java)
+        docRef.getReference("questions").child("questions").
+        addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for(questionSnapshot in snapshot.children){
+
+                    }
+//                    val globalcity = snapshot.getValue(GlobalCity::class.java)
 //                        Log.d(ContentValues.TAG,"error getting document   ${globalcity}")
 //                        globalcitiesList.add(globalcity!!)
-//                    }
-//                    recyclerView?.adapter = NewCityAdapter(context,globalcitiesList)
-//                }
-//
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                Log.d(ContentValues.TAG,"error getting document")
-//            }
-//        })
-//
+                    }
+    //                recyclerView?.adapter = NewCityAdapter(context,globalcitiesList)
+                }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+
+
 
 
 
