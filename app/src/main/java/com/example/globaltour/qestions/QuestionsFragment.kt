@@ -12,6 +12,7 @@ import androidx.core.view.MenuProvider
 import com.example.globaltour.MainActivity
 import com.example.globaltour.MapsActivity
 import com.example.globaltour.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -30,7 +31,7 @@ class QuestionsFragment : Fragment(),MenuProvider {
         super.onViewCreated(view, savedInstanceState)
         activity?.addMenuProvider(this)
         val addButton = view.findViewById<Button>(R.id.questionButton)
-        val mapButton = view.findViewById<Button>(R.id.button_map)
+        val floatingButton_map = view.findViewById<FloatingActionButton>(R.id.floatingActionButton_map)
 
         addButton.setOnClickListener {
             val docRef = FirebaseDatabase.getInstance()
@@ -49,7 +50,7 @@ class QuestionsFragment : Fragment(),MenuProvider {
 
             Toast.makeText(this@QuestionsFragment.requireActivity(),"saving",Toast.LENGTH_SHORT).show()
         }
-        mapButton.setOnClickListener {
+        floatingButton_map.setOnClickListener {
             val intent = Intent (activity,MapsActivity::class.java)
             startActivity(intent)
         }

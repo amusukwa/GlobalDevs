@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.Insets.add
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.globaltour.R
@@ -57,10 +58,10 @@ class QuestionsList : Fragment() {
                     }
                     val question = snapshot.getValue(Question::class.java)
                         Log.d(ContentValues.TAG,"error getting document   ${question}")
-                 //       QuestionsList.add(question!!)
+                      //  QuestionsList.add(question!!)
 
                     }
-                   // recyclerView?.adapter = questionAdapter(context,questionList)
+                  //  recyclerView?.adapter = questionAdapter(context,questionList)
                 }
 
             override fun onCancelled(error: DatabaseError) {
@@ -68,10 +69,6 @@ class QuestionsList : Fragment() {
             }
 
         })
-
-
-
-
 
 
     }}
