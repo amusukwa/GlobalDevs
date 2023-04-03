@@ -57,8 +57,9 @@ class QuestionsList : Fragment() {
 
                     }
                     val question = snapshot.getValue(Question::class.java)
-                        Log.d(ContentValues.TAG,"error getting document   ${question}")
-                      //  QuestionsList.add(question!!)
+                      //  Log.d(ContentValues.TAG,"error getting document ${question}")
+                    snapshot.getValue(Question::class.java)?.let { questionList.add(it) }
+                    Log.d(ContentValues.TAG,"error getting document ${questionList[0]}")
 
                     }
                   //  recyclerView?.adapter = questionAdapter(context,questionList)

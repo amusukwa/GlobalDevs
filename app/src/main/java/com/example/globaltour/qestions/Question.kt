@@ -1,5 +1,9 @@
 package com.example.globaltour.qestions
 
-data class Question(val questionName: String ="" , val username: String =""){
+import java.io.Serializable
+@kotlinx.serialization.Serializable
+
+data class Question(
+    val questionName: String ="" , val username: String =""){
 
 }

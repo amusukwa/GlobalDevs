@@ -86,7 +86,7 @@
         android:id="@+id/floatingActionButton_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="60dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_fmd_good_24"
         app:layout_constraintBottom_toBottomOf="parent"
