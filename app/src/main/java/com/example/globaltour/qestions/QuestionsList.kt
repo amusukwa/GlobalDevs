@@ -56,8 +56,8 @@ class QuestionsList : Fragment() {
                     for(questionSnapshot in snapshot.children){
 
                     }
-                    val question = snapshot.getValue(Question::class.java)
-                      //  Log.d(ContentValues.TAG,"error getting document ${question}")
+                   // val question = snapshot.getValue(Question::class.java)
+                   //     Log.d(ContentValues.TAG,"error getting document ${question}")
                     snapshot.getValue(Question::class.java)?.let { questionList.add(it) }
                     Log.d(ContentValues.TAG,"error getting document ${questionList[0]}")
 
