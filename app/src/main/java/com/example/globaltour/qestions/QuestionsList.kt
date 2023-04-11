@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.core.graphics.Insets.add
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +27,8 @@ class QuestionsList : Fragment() {
 
     private lateinit var questionList: ArrayList<Question>
     private lateinit var questionAdapter: QuestionAdapter
-    private lateinit var recyclerView: RecyclerView
+   // private lateinit var recyclerView: RecyclerView
+     private lateinit var firebasetext: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,8 +47,8 @@ class QuestionsList : Fragment() {
           val context = requireContext()
           questionList =  arrayListOf<Question>()
         questionAdapter = QuestionAdapter(context, questionList)
-        val recyclerView =  view?.findViewById<RecyclerView>(R.id.questions_recycler)
-         recyclerView?.adapter = questionAdapter
+      //  val recyclerView =  view?.findViewById<RecyclerView>(R.id.questions_recycler)
+      //   recyclerView?.adapter = questionAdapter
 
 
         docRef.getReference("questions").
@@ -56,17 +59,20 @@ class QuestionsList : Fragment() {
                     for(questionSnapshot in snapshot.children){
 
                     }
-                   // val question = snapshot.getValue(Question::class.java)
-                   //     Log.d(ContentValues.TAG,"error getting document ${question}")
-                    snapshot.getValue(Question::class.java)?.let { questionList.add(it) }
-                    Log.d(ContentValues.TAG,"error getting document ${questionList[0]}")
+                    val question = snapshot.getValue(Question::class.java).toString()
+
+                    Log.d(ContentValues.TAG,"error getting document ${question}")
+
+                //  snapshot.getValue(Question::class.java)?.let { questionList.add(it) }
+                   // Log.d(ContentValues.TAG,"error getting document ${questionList[0]}")
 
                     }
                   //  recyclerView?.adapter = questionAdapter(context,questionList)
                 }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(this@QuestionsList.requireActivity(), "saving", Toast.LENGTH_SHORT)
+                    .show()
             }
 
         })
