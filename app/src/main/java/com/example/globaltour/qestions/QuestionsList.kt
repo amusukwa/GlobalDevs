@@ -20,14 +20,15 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 
 
 class QuestionsList : Fragment() {
 
     private lateinit var questionList: ArrayList<Question>
     private lateinit var questionAdapter: QuestionAdapter
-   // private lateinit var recyclerView: RecyclerView
+    private lateinit var question: Question
+    private lateinit var recyclerView: RecyclerView
      private lateinit var firebasetext: TextView
 
     override fun onCreateView(
@@ -46,7 +47,8 @@ class QuestionsList : Fragment() {
           var docRef = FirebaseDatabase.getInstance()
           val context = requireContext()
           questionList =  arrayListOf<Question>()
-        questionAdapter = QuestionAdapter(context, questionList)
+         questionAdapter = QuestionAdapter(context, questionList)
+      //   firebasetext = view?.findViewById<TextView>(R.id.firebasetext)!!
       //  val recyclerView =  view?.findViewById<RecyclerView>(R.id.questions_recycler)
       //   recyclerView?.adapter = questionAdapter
 
@@ -60,14 +62,14 @@ class QuestionsList : Fragment() {
 
                     }
                     val question = snapshot.getValue(Question::class.java).toString()
+                    snapshot.children.toString()
 
                     Log.d(ContentValues.TAG,"error getting document ${question}")
 
-                //  snapshot.getValue(Question::class.java)?.let { questionList.add(it) }
                    // Log.d(ContentValues.TAG,"error getting document ${questionList[0]}")
 
                     }
-                  //  recyclerView?.adapter = questionAdapter(context,questionList)
+                  // recyclerView?.adapter = questionAdapter(context,questionList)
                 }
 
             override fun onCancelled(error: DatabaseError) {
