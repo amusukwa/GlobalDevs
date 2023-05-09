@@ -1,22 +1,22 @@
-package repository
+package com.example.globaltour.repository
 
 import androidx.lifecycle.MutableLiveData
 import com.example.globaltour.qestions.Question
 import com.google.firebase.database.*
 
-class QuestionsRepository {
- private   val databaseReference:DatabaseReference =  FirebaseDatabase.getInstance()
-     .getReference("questions")
-  @Volatile  private var INSTANCE:QuestionsRepository ?= null
-    fun getInstance():QuestionsRepository{
+class QuestionRepository {
+    private   val databaseReference: DatabaseReference =  FirebaseDatabase.getInstance()
+        .getReference("questions")
+    @Volatile  private var INSTANCE: QuestionRepository?= null
+    fun getInstance(): QuestionRepository {
         return INSTANCE?: synchronized(this){
-            val instance = QuestionsRepository()
+            val instance = QuestionRepository()
             INSTANCE = instance
             instance
         }
     }
 
-    fun loadQuestions(questionsList:MutableLiveData<List<Question>>){
+    fun loadQuestions(questionsList: MutableLiveData<List<Question>>){
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 try {

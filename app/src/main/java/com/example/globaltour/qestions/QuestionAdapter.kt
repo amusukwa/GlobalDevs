@@ -13,6 +13,7 @@ import com.example.globaltour.city.City
 class QuestionAdapter(val context: Context, var QuestionList: ArrayList<Question>):
     RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder>() {
 
+    private var QuestionsList = ArrayList<Question>()
 
     inner class QuestionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -44,6 +45,11 @@ class QuestionAdapter(val context: Context, var QuestionList: ArrayList<Question
 
     override fun getItemCount(): Int {
         return QuestionList.size
+    }
+    fun updateQuestionList(QuestionsList:List<Question>){
+        this.QuestionsList.clear()
+        this.QuestionsList.addAll(QuestionsList)
+        notifyDataSetChanged()
     }
 
 }
