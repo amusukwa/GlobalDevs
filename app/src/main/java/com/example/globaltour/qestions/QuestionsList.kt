@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,6 +44,9 @@ class QuestionsList : Fragment() {
         recyclerView?.adapter = questionAdapter
 
         viewmodel = ViewModelProvider(this).get(QuestionsViewModel::class.java)
+        (viewmodel as QuestionsViewModel).All_questions.observe(viewLifecycleOwner, Observer {
+            questionAdapter.updateQuestionList(it)
+        })
 
 
         super.onViewCreated(view, savedInstanceState)
