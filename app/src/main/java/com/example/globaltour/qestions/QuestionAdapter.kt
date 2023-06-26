@@ -10,23 +10,19 @@ import com.example.globaltour.R
 import com.example.globaltour.city.City
 
 
-class QuestionAdapter(val context: Context, var QuestionList: ArrayList<Question>):
+class QuestionAdapter(val context: Context, var questionList: ArrayList<Question>):
     RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder>() {
 
-    private var QuestionsList = ArrayList<Question>()
-
-    inner class QuestionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+       inner class QuestionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
        private lateinit var question: Question
 
         private val questiontxt = itemView.findViewById<TextView>(R.id.questionName_txt)
-        private val usernametxt= itemView.findViewById<TextView>(R.id.username_text)
+        private val usernametxt= itemView.findViewById<TextView>(R.id.name_text)
 
-        fun bind(question: Question, position: Int) {
-
+        fun bind(question: Question) {
             questiontxt.text = question.questionName
             usernametxt.text = question.username
-
         }
 
     }
@@ -38,17 +34,18 @@ class QuestionAdapter(val context: Context, var QuestionList: ArrayList<Question
     }
 
     override fun onBindViewHolder(holder: QuestionViewHolder, position: Int) {
-        val question = QuestionList[position]
-        holder.bind(question, position)
+        val question = questionList[position]
+        holder.bind(question)
 
     }
 
     override fun getItemCount(): Int {
-        return QuestionList.size
+        return questionList.size
     }
-    fun updateQuestionList(QuestionsList:List<Question>){
-        this.QuestionsList.clear()
-        this.QuestionsList.addAll(QuestionsList)
+    fun updateQuestionList(updatedQuestionList: List<Question>) {
+        questionList.clear()
+       // questionList.addAll(newQuestionList)
+        questionList.addAll(updatedQuestionList)
         notifyDataSetChanged()
     }
 
