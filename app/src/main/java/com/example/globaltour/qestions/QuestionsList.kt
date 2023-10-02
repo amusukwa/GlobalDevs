@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 
-class QuestionsList : Fragment() {
+class QuestionsList : Fragment(), QuestionAdapter.OnItemClickListener {
 
     private lateinit var questionList: ArrayList<Question>
     private lateinit var questionAdapter: QuestionAdapter
@@ -48,10 +48,13 @@ class QuestionsList : Fragment() {
         recyclerView?.setHasFixedSize(true)
         recyclerView?.adapter = questionAdapter
 
+
+
         viewmodel = ViewModelProvider(this).get(QuestionsViewModel::class.java)
         (viewmodel as QuestionsViewModel).All_questions.observe(viewLifecycleOwner, Observer {
 
             questionList.addAll(it)
+            questionAdapter.notifyDataSetChanged()
             questionAdapter.notifyDataSetChanged()
         })
 
@@ -60,7 +63,8 @@ class QuestionsList : Fragment() {
     }
 
     private fun setUpRecyclerView(view: View) {
-        questionAdapter = QuestionAdapter(requireContext(), ArrayList())
+        questionAdapter = QuestionAdapter(requireContext(), ArrayList(),this
+        )
 
         val docRef = FirebaseDatabase.getInstance().getReference("questions")
         docRef.addValueEventListener(object : ValueEventListener {
@@ -82,5 +86,11 @@ class QuestionsList : Fragment() {
                     .show()
             }
         })
+    }
+
+    override fun onItemClick(question: Question) {
+        Toast.makeText(requireContext(), "Clicked on question:" +
+                " ${question.questionName}",
+            Toast.LENGTH_SHORT).show()
     }
 }
