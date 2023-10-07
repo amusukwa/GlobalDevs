@@ -89,7 +89,15 @@ class QuestionsList : Fragment(), QuestionAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(question: Question) {
-        Toast.makeText(requireContext(), "Clicked on question:" +
+        // Obtain a reference to the Firebase Realtime Database
+        val databaseReference = FirebaseDatabase.getInstance().getReference("questions")
+
+        // Identify the key of the item you want to delete (assuming there's a key field in your Question class)
+        val itemKeyToDelete = question.questionName
+
+        databaseReference.child(itemKeyToDelete).removeValue()
+
+       Toast.makeText(requireContext(), "Deleted:" +
                 " ${question.questionName}",
             Toast.LENGTH_SHORT).show()
     }
