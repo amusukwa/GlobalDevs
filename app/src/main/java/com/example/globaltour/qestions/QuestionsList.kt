@@ -95,10 +95,11 @@ class QuestionsList : Fragment(), QuestionAdapter.OnItemClickListener {
         // Identify the key of the item you want to delete (assuming there's a key field in your Question class)
         val itemKeyToDelete = question.questionName
 
-        databaseReference.child(itemKeyToDelete).removeValue()
+        databaseReference.child(itemKeyToDelete).removeValue().addOnSuccessListener {
+            Toast.makeText(requireContext(), "Deleted: ${question.questionName}", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+            Toast.makeText(requireContext(), "Failed to delete: ${it.message}", Toast.LENGTH_SHORT).show()
+        }}
 
-       Toast.makeText(requireContext(), "Deleted:" +
-                " ${question.questionName}",
-            Toast.LENGTH_SHORT).show()
-    }
+
 }

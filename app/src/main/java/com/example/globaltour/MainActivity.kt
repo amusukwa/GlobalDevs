@@ -1,5 +1,6 @@
 package com.example.globaltour
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -8,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +24,15 @@ class MainActivity : AppCompatActivity() {
         // Initialize Views
         toolbar         = findViewById(R.id.activity_main_toolbar)
         bottomNavView   = findViewById(R.id.bottom_nav_view)
+
+        // Check if user is signed in
+//        val currentUser = FirebaseAuth.getInstance().currentUser
+//        if (currentUser == null) {
+//            // If user is not signed in, navigate to sign-in activity
+//            startActivity(Intent(this, SignInActivity::class.java))
+//            finish() // Finish MainActivity to prevent user from going back
+//            return
+//        }
 
         // Get NavHostFragment and NavController
         val navHostFrag = supportFragmentManager.findFragmentById(R.id.nav_host_frag) as NavHostFragment
