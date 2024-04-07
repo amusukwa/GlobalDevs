@@ -7,4 +7,9 @@
     <string name="send">send</string>
     <string name="List">List</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="add">add</string>
+    <string name="name">name</string>
+    <string name="proficiency">proficiency</string>
+    <string name="email">email</string>
+    <string name="country">country</string>
 </resources>
