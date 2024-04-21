@@ -1,5 +1,6 @@
 package com.example.globaltour
 
+import SignInActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -44,27 +45,36 @@ class MainActivity : AppCompatActivity() {
 
         // Connect BottomNavigationView with NavController
         bottomNavView.setupWithNavController(navController)
+//        val authStateListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
+//            val currentUser = FirebaseAuth.getInstance().currentUser
+//            if (currentUser == null) {
+//                // If user is not signed in, navigate to sign-in activity
+//                startActivity(Intent(this, SignInActivity::class.java))
+//                finish() // Finish MainActivity to prevent user from going back
+//
+//            }}
+
     }
 
     override fun onStart() {
         super.onStart()
-        val authStateListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
-            val currentUser = FirebaseAuth.getInstance().currentUser
-            if (currentUser == null) {
-                // If user is not signed in, navigate to sign-in activity
-                startActivity(Intent(this, SignInActivity::class.java))
-                finish() // Finish MainActivity to prevent user from going back
-
-            }}
+//        val authStateListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
+//            val currentUser = FirebaseAuth.getInstance().currentUser
+//            if (currentUser == null) {
+//                // If user is not signed in, navigate to sign-in activity
+//                startActivity(Intent(this, SignInActivity::class.java))
+//                finish() // Finish MainActivity to prevent user from going back
+//
+//            }}
         // Add authentication state listener when the activity starts
-        auth.addAuthStateListener(authStateListener)
+       // auth.addAuthStateListener(authStateListener)
     }
 
 
     override fun onStop() {
         super.onStop()
         // Remove authentication state listener when the activity stops
-        auth.removeAuthStateListener(authStateListener)
+       // auth.removeAuthStateListener(authStateListener)
     }
 
 

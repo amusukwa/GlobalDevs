@@ -1,9 +1,8 @@
-package com.example.globaltour
-
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.globaltour.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -18,24 +17,28 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
-        val signIn :Button = findViewById(R.id.google_button)
+        setContentView(R.layout.activity_login)
+        val sign_in_button = findViewById<Button>(R.id.google_button)
+
+
+        // Initialize the sign-in button
+        sign_in_button.setOnClickListener {
+            signIn()
+        }
+
         // Configure Google Sign-In
         mGoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
+    }
 
-//        // Set onClickListener for sign-in button
-//        sign_in_button.setOnClickListener {
-//            signIn()
-//        }
-}
     private fun signIn() {
         val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -53,6 +56,4 @@ class SignInActivity : AppCompatActivity() {
             }
         }
     }
-
-
 }

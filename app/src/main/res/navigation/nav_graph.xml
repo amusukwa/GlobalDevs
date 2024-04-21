@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_favorite" />
 
     <fragment
-        android:id="@+id/fragmentQuestions"
-        android:name="com.example.globaltour.qestions.QuestionsFragment"
+        android:id="@+id/fragment_dev"
+        android:name="com.example.globaltour.DevFragment"
         android:label="@string/questions"
         tools:layout="@layout/fragment_questions" />
     <fragment

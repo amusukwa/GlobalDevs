@@ -12,4 +12,6 @@
     <string name="proficiency">proficiency</string>
     <string name="email">email</string>
     <string name="country">country</string>
+    <string name="devprofile">DevProfile</string>
+    <string name="skill">skill</string>
 </resources>

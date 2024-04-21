@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/skill_text"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#FFFFFF"
@@ -11,8 +12,8 @@
         android:id="@+id/dev_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_marginStart="@dimen/dev_prof_start"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
         android:hint="@string/name"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,27 +26,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dev_poficiency"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginStart="@dimen/dev_prof_start"
-        android:layout_marginEnd="10dp"
-        android:hint="@string/proficiency"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/dev_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
         android:layout_marginStart="@dimen/dev_prof_start"
+        android:layout_marginTop="190dp"
         android:layout_marginEnd="10dp"
         android:hint="@string/email"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,12 +41,13 @@
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/dev_country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
         android:layout_marginStart="@dimen/dev_prof_start"
+        android:layout_marginTop="270dp"
         android:layout_marginEnd="10dp"
         android:hint="@string/country"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,14 +60,25 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/questionButton"
+        android:id="@+id/devButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/add"
         android:layout_marginTop="50dp"
+        android:text="@string/add"
         app:icon="@drawable/ic_baseline_send_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dev_country" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="96dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/dev_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
