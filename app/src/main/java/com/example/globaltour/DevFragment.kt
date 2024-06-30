@@ -40,7 +40,6 @@ class DevFragment : Fragment(), MenuProvider {
                 val dev_skill = view.findViewById<EditText>(R.id.skill_spin)
                 val dev_email = view.findViewById<EditText>(R.id.dev_email)
                 val dev_location = view.findViewById<EditText>(R.id.dev_country)
-                val uid = "q5777r93"
 
 
 
@@ -50,7 +49,7 @@ class DevFragment : Fragment(), MenuProvider {
                 val location = dev_location.text.toString()
 
 
-                val devprof = Devprofile(uid,name,skills,email,location)
+                val devprof = Devprofile(name,skills,email,location)
                 docRef.getReference("devprofile").push()
                     .setValue(devprof)
 
