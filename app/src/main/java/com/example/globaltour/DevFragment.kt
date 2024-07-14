@@ -31,17 +31,17 @@ class DevFragment : Fragment(), MenuProvider, AdapterView.OnItemSelectedListener
             val devEmailLayout = view.findViewById<TextInputLayout>(R.id.dev_email)
             val devLocationLayout = view.findViewById<TextInputLayout>(R.id.dev_country)
 
-            val devName = devNameLayout.editText?.text.toString().trim()
-            val devSkill = devSkillLayout.editText?.text.toString().trim()
-            val devEmail = devEmailLayout.editText?.text.toString().trim()
-            val devLocation = devLocationLayout.editText?.text.toString().trim()
+            val name = devNameLayout.editText?.text.toString().trim()
+            val skills = devSkillLayout.editText?.text.toString().trim()
+            val email = devEmailLayout.editText?.text.toString().trim()
+            val location = devLocationLayout.editText?.text.toString().trim()
 
-            if (devName.isEmpty() || devSkill.isEmpty() || devEmail.isEmpty() || devLocation.isEmpty()) {
+            if (name.isEmpty() || skills.isEmpty() || email.isEmpty() ||location.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val devProf = Devprofile(devName, devSkill, devEmail, devLocation)
+            val devProf = Devprofile(name, skills, email, location)
 
             val database = FirebaseDatabase.getInstance().reference
             val key = database.child("devprofile").push().key
