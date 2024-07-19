@@ -33,7 +33,7 @@ import com.google.firebase.database.ValueEventListener
 //savedInstanceState: Bundle?
 //): View? {
 //// Inflate the layout for this fragment
-//val view = inflater.inflate(R.layout.fragment_questions_list, container, false)
+//val view = inflater.inflate(R.layout.fragment_devlist, container, false)
 //setUpRecyclerView(view)
 //return view
 //
@@ -45,7 +45,7 @@ import com.google.firebase.database.ValueEventListener
 //val recyclerView = view?.findViewById<RecyclerView>(R.id.questions_recycler)
 //recyclerView?.layoutManager = LinearLayoutManager(context)
 //recyclerView?.setHasFixedSize(true)
-//recyclerView?.adapter = questionAdapter
+//recyclerView?.adapter = devAdapter
 //
 //
 //
