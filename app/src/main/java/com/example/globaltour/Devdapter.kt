@@ -34,4 +34,10 @@ class Devdapter(val context: Context, var devList:ArrayList<Devprofile>)
     override fun getItemCount(): Int {
         TODO("Not yet implemented")
     }
+
+    fun updateDevList(newDevList: ArrayList<Devprofile>) {
+        devList = newDevList
+        notifyDataSetChanged()
+    }
+
 }
