@@ -20,11 +20,11 @@
     <fragment
         android:id="@+id/fragment_dev"
         android:name="com.example.globaltour.DevFragment"
-        android:label="@string/questions"
+        android:label="@string/profile"
         tools:layout="@layout/fragment_questions" />
     <fragment
-        android:id="@+id/fragmentQuestionsList"
-        android:name="com.example.globaltour.qestions.QuestionsList"
+        android:id="@+id/fragment_devlist"
+        android:name="com.example.globaltour.DevlistFragment"
         android:label="List"
         tools:layout="@layout/fragment_questions" />
 
