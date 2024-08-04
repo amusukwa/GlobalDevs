@@ -39,7 +39,7 @@ class DevlistFragment : Fragment() {
         devList = ArrayList()
 
         // Initialize RecyclerView and its Adapter
-        recyclerView = view.findViewById(R.id.questions_recycler)
+        recyclerView = view.findViewById(R.id.devlist_recycler)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
 

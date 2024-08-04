@@ -9,7 +9,7 @@
     <string name="delete_icon">Delete Icon</string>
     <string name="favorite_icon">Favorite Icon</string>
 
-    <string name="top_cities">Top Cities</string>
+    <string name="top_cities">Cities</string>
     <string name="favorites">Favorites</string>
 
 </resources>

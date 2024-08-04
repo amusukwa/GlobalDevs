@@ -21,12 +21,12 @@
         android:id="@+id/fragment_dev"
         android:name="com.example.globaltour.DevFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_questions" />
+        tools:layout="@layout/fragment_dev" />
     <fragment
-        android:id="@+id/fragment_devlist"
-        android:name="com.example.globaltour.DevlistFragment"
+        android:id="@+id/fragment_questions_list"
+        android:name="com.example.globaltour.qestions.QuestionsList"
         android:label="List"
-        tools:layout="@layout/fragment_questions" />
+        tools:layout="@layout/fragment_questions_list" />
 
 
 </navigation>

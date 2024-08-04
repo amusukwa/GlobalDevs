@@ -48,7 +48,7 @@ object VacationSpots {
 //        "York", "Stratford-upon-Avon", "Bournemouth", "Beijing",
 //        "Miami", "Portland", "Chengdu", "Hangzhou", "Suzhou", "Huangshan",
 //        "Hong Kong", "Cairns", "Perth", "Brisbane",
-      "Kakadu", "Melbourne", "Great Barrier Reef", "Sydney",
+      "Blantyre", "Lilongwe", "Nairobi", "Lusaka",
         "Lwanda", "California",
         "Japan","S.Korea", "Isreal","Nigeria"
     )
