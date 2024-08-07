@@ -31,8 +31,8 @@ object VacationSpots {
 //        R.drawable.thumb_3_4, R.drawable.thumb_3_5, R.drawable.thumb_3_6,
  //       R.drawable.thumb_3_7, R.drawable.thumb_3_8, R.drawable.thumb_3_9,
   //      R.drawable.thumb_7_3, R.drawable.thumb_7_4,
-        R.drawable.thumb_7_5,R.drawable.thumb_7_6,
-        R.drawable.thumn_7_7, R.drawable.thumb_7_8,R.drawable.thumb_7_9
+        R.drawable.thumb_8_2,R.drawable.thumb_8_3,
+        R.drawable.thumb_8_4, R.drawable.thumb_8_5,R.drawable.thumb_8_6
     )
 
     private val cityNames = arrayListOf(

@@ -8,6 +8,20 @@
     android:backgroundTint="#FFFFFF"
     tools:context=".DevFragment">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImage"
+        android:layout_width="230dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_account_circle_black_24dp"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass" />
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/dev_name"
         android:layout_width="match_parent"
