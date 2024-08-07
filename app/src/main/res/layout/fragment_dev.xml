@@ -13,7 +13,7 @@
         android:layout_width="230dp"
         android:layout_height="150dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/ic_account_circle_black_24dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
         app:civ_border_color="#FFFFFF"
         app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
