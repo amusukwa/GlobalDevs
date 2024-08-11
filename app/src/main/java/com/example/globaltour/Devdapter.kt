@@ -2,6 +2,7 @@
 package com.example.globaltour
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -14,26 +15,32 @@ class Devdapter(val context: Context, var devList:ArrayList<Devprofile>)
 
         private lateinit var devprofile: Devprofile
 
-        private val questiontxt = itemView.findViewById<TextView>(R.id.questionName_txt)
-        private val usernametxt= itemView.findViewById<TextView>(R.id.name_text)
+        private val name = itemView.findViewById<TextView>(R.id.prof_name_txt)
+        private val country= itemView.findViewById<TextView>(R.id.country_txt)
 
-        fun bind(question: Question) {
-            questiontxt.text = question.questionName
-            usernametxt.text = question.username
+        fun bind(devprofile: Devprofile) {
+            name.text = devprofile.name
+            country.text = devprofile.location
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DevViewHolder {
-        TODO("Not yet implemented")
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.dev_profile_item, parent, false)
+        return DevViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: DevViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val devprofile = devList[position]
+        holder.bind(devprofile)
+//        holder.itemView.setOnClickListener {
+//            listener.onItemClick(devprofile)
+//        }
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+    override fun getItemCount():Int {
+         return devList.size
     }
 
     fun updateDevList(newDevList: ArrayList<Devprofile>) {

@@ -11,11 +11,12 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImage"
         android:layout_width="230dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/ic_baseline_account_circle_24"
-        app:civ_border_color="#FFFFFF"
+        app:civ_border_color="#000000"
         app:civ_border_width="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/dev_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,9 +27,9 @@
         android:id="@+id/dev_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dev_prof_start"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="15dp"
         android:hint="@string/name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -43,9 +44,9 @@
         android:id="@+id/dev_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dev_prof_start"
-        android:layout_marginTop="190dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="15dp"
         android:hint="@string/email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -60,9 +61,9 @@
         android:id="@+id/dev_country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dev_prof_start"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="270dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="15dp"
         android:hint="@string/country"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -77,9 +78,9 @@
         android:id="@+id/dev_skill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dev_prof_start"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="270dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="15dp"
         android:hint="@string/country"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -101,15 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dev_skill" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="96dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toTopOf="@+id/dev_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

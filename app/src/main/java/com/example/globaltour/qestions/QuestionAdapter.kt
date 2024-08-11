@@ -4,11 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.globaltour.R
-import com.example.globaltour.city.City
 
 
 class QuestionAdapter(val context: Context, var questionList: ArrayList<Question>,
@@ -20,8 +18,8 @@ class QuestionAdapter(val context: Context, var questionList: ArrayList<Question
 
        private lateinit var question: Question
 
-        private val questiontxt = itemView.findViewById<TextView>(R.id.questionName_txt)
-        private val usernametxt= itemView.findViewById<TextView>(R.id.name_text)
+        private val questiontxt = itemView.findViewById<TextView>(R.id.username_txt)
+        private val usernametxt= itemView.findViewById<TextView>(R.id.country_txt)
 
         fun bind(question: Question) {
             questiontxt.text = question.questionName
