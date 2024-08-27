@@ -23,10 +23,10 @@
         android:label="@string/profile"
         tools:layout="@layout/fragment_dev" />
     <fragment
-        android:id="@+id/fragment_questions_list"
-        android:name="com.example.globaltour.qestions.QuestionsList"
+        android:id="@+id/fragment_devlist"
+        android:name="com.example.globaltour.DevlistFragment"
         android:label="List"
-        tools:layout="@layout/fragment_questions_list" />
+        tools:layout="@layout/fragment_devlist" />
 
 
 </navigation>

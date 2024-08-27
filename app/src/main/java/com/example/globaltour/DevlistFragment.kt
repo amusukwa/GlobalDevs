@@ -39,11 +39,11 @@ class DevlistFragment : Fragment() {
         devList = ArrayList()
 
         // Initialize RecyclerView and its Adapter
-        recyclerView = view.findViewById(R.id.devlist_recycler)
+        recyclerView = view.findViewById(R.id.questions_recycler)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
 
-      //  devAdapter = Devdapter(requireContext(), devList, this)
+        devAdapter = Devdapter(requireContext(), devList)
         recyclerView.adapter = devAdapter
 
         viewModel = ViewModelProvider(this).get(DevViewModel::class.java)
@@ -55,7 +55,7 @@ class DevlistFragment : Fragment() {
     }
 
     private fun setUpRecyclerView(view: View) {
-        devAdapter = Devdapter(requireContext(), arrayListOf())
+      //  devAdapter = Devdapter(requireContext(), ArrayList())
         recyclerView = view.findViewById(R.id.questions_recycler)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)

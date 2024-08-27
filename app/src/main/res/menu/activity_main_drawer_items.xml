@@ -18,7 +18,7 @@
             android:title="@string/devprofile" />
 
         <item
-            android:id="@+id/fragmentQuestionsList"
+            android:id="@+id/fragment_devlist"
             android:icon="@drawable/ic_baseline_list_24"
             android:title="@string/List" />
 
