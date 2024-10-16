@@ -1,6 +1,7 @@
 package com.example.globaltour
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.fragment.app.Fragment
@@ -36,10 +37,13 @@ class DevFragment : Fragment(), MenuProvider, AdapterView.OnItemSelectedListener
             val email = devEmailLayout.editText?.text.toString().trim()
             val location = devLocationLayout.editText?.text.toString().trim()
 
-            if (name.isEmpty() || skills.isEmpty() || email.isEmpty() ||location.isEmpty()) {
-                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
+            Log.d("DevFragment", "Name: $name, Skills: $skills, Email: $email, Location: $location")
+
+           // if (name.isEmpty() || skills.isEmpty() || email.isEmpty() ||location.isEmpty()) {
+           //     Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
+         //       return@setOnClickListener
+         //   }
+
 
             val devProf = Devprofile(name, skills, email, location)
 

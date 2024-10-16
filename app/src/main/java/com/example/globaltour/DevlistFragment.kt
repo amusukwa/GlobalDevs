@@ -1,6 +1,7 @@
 package com.example.globaltour
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -53,32 +54,38 @@ class DevlistFragment : Fragment() {
             devAdapter.notifyDataSetChanged()
         })
     }
-
     private fun setUpRecyclerView(view: View) {
-        devList = ArrayList()
-        devAdapter = Devdapter(requireContext(), ArrayList())
-        recyclerView = view.findViewById(R.id.devlist_recycler)
+        devList = ArrayList() // Initialize devList to prevent any null pointer exception
+        devAdapter = Devdapter(requireContext(), devList) // Initialize devAdapter before use
+
+        recyclerView = view.findViewById(R.id.devlist_recycler) // Ensure this is the correct ID
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = devAdapter
+        recyclerView.adapter = devAdapter // Assign devAdapter to RecyclerView
 
+        // Firebase database reference to fetch data
         val docRef = FirebaseDatabase.getInstance().getReference("devprofile")
         docRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                devList.clear()
+                devList.clear() // Clear the list to avoid duplicate entries
                 for (devprofileSnapshot in snapshot.children) {
                     val devprofile = devprofileSnapshot.getValue(Devprofile::class.java)
                     devprofile?.let {
                         devList.add(it)
                     }
+
                 }
-                devAdapter.updateDevList(devList)
+
+
+
+            devAdapter.notifyDataSetChanged() // Notify adapter about data changes
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(requireActivity(), "Error retrieving data", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(requireActivity(), "Error retrieving data", Toast.LENGTH_SHORT).show()
             }
         })
     }
+
+
 }
