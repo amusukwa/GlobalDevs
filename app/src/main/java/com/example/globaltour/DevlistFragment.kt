@@ -73,12 +73,11 @@ class DevlistFragment : Fragment() {
                     devprofile?.let {
                         devList.add(it)
                     }
+                    Log.d("DevlistFragment", "Data fetched: ${devList.size} items")
 
                 }
 
-
-
-            devAdapter.notifyDataSetChanged() // Notify adapter about data changes
+            devAdapter.updateDevList(devList) // Notify adapter about data changes
             }
 
             override fun onCancelled(error: DatabaseError) {

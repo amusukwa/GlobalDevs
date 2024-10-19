@@ -55,7 +55,6 @@ class QuestionsList : Fragment(), QuestionAdapter.OnItemClickListener {
 
             questionList.addAll(it)
             questionAdapter.notifyDataSetChanged()
-            questionAdapter.notifyDataSetChanged()
         })
 
 
@@ -75,7 +74,6 @@ class QuestionsList : Fragment(), QuestionAdapter.OnItemClickListener {
                     val question = questionSnapshot.getValue(Question::class.java)
                     question?.let {
                         questionList.add(it)
-                        //newQuestionList.add(it)
                     }
                 }
                 questionAdapter.updateQuestionList(questionList)
